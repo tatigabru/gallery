@@ -19,9 +19,9 @@ export async function generateMetadata({ params }) {
 }
 
 export default function MealDetailsPage({ params }) {
-  const meal = getArt(params.slug);
+  const art = getArt(params.slug);
 
-  if (!meal) {
+  if (!art) {
     notFound();
   }
 
@@ -29,12 +29,14 @@ export default function MealDetailsPage({ params }) {
     <>
     <header className={classes.header}>
       <div className={classes.image}>
-        <Image src={meal.image} fill />
+        <Image src={art.image} fill />
       </div>
       <div className={classes.headerText}>
-        <h1>{meal.title}</h1>
-        <p>{meal.category}, $ {meal.price}</p>
-        <p>todo details</p>
+        <h1>{art.title}</h1>
+        <h2>{art.category}, $ {art.price}</h2>
+        <p>{art.description} </p>
+        <p>Size: 14 x 19 inch</p>
+        <p>Exclusive: original artwork. Only one painting like this will ever exist</p>
       </div>
     </header>
     <main>

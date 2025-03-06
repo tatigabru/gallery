@@ -17,17 +17,18 @@
     border-radius: 8px;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
     animation: fade-slide-in-from-left 1s ease-out forwards;
-  }
+  }0
   
   .headerText {
     padding: 0.5rem 1rem 0 1rem;
-    color: #ddd6cb;
+    color: #000000;
     max-width: 40rem;
     animation: fade-slide-in-from-right 1s ease-out forwards;
   }
   
   .headerText h1 {
     margin: 0;
+    color: #ddd6cb;
     font-size: 3.5rem;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
@@ -76,7 +77,7 @@
   .loading {
     font-size: 3rem;
     text-align: center;
-    color: #ddd6cb;
+    color: #0b0b0b;
     font-weight: bold;
     animation: flash 1s ease-in-out infinite alternate;
   }

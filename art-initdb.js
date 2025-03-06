@@ -58,13 +58,76 @@ const dummyArt = [
     category: 'acrylic'
   },
   {
-    title: 'Sumie Herons',
+    title: 'Herons',
     slug: 'sumie-herons',
     image: '/images/sumie-herons-800x800.jpg',
     description:
-      'Traditional Japanese sumi-e ink painting of elegant herons wading in misty waters.',
+      'Traditional Japanese sumi-e painting of elegant herons wading in misty waters.',
     price: 59.99,
     category: 'sumie'
+  },
+  {
+    title: 'Tiger',
+    slug: 'sumie-tiger',
+    image: '/images/sumie-tiger-800x800.jpg',
+    description:
+      'Traditional Japanese sumi-e painting of tiger hiding in the bamboo forest.',
+    price: 99.99,
+    category: 'sumie'
+  },
+  {
+    title: 'Sakura',
+    slug: 'sumie-sakura',
+    image: '/images/sumie-sakura-800x800.jpg',
+    description:
+      'Traditional Japanese sumi-e painting of sakura at a river, capturing spring in Japan.',
+    price: 99.99,
+    category: 'sumie'
+  },
+  {
+    title: 'Bamboo',
+    slug: 'sumie-bamboo',
+    image: '/images/sumie-bamboo-800x800.jpg',
+    description:
+      'Traditional Japanese sumi-e painting of bamboo at a river.',
+    price: 49.99,
+    category: 'sumie'
+  },
+  {
+    title: 'Bicycle',
+    slug: 'bicycle',
+    image: '/images/watercolor-bicycle-800x800.jpg',
+    description:
+      'Watercolor sketch of a bicycle in the autumn leaves.',
+    price: 49.99,
+    category: 'watercolor'
+  },
+  {
+    title: 'Oaks',
+    slug: 'oaks',
+    image: '/images/watercolor-oaks-800x800.jpg',
+    description:
+      'Watercolor sketch of yellow autumn oaks.',
+    price: 49.99,
+    category: 'watercolor'
+  },
+  {
+    title: 'Autumn',
+    slug: 'autumn',
+    image: '/images/watercolor-autumn-800x800.jpg',
+    description:
+      'Watercolor sketch of bright autumn trees under rain.',
+    price: 49.99,
+    category: 'watercolor'
+  },
+  {
+    title: 'Maples',
+    slug: 'maples',
+    image: '/images/watercolor-autumn2-800x800.jpg',
+    description:
+      'Watercolor sketch of bright maple trees under a slight autumn rain.',
+    price: 49.99,
+    category: 'watercolor'
   },
 ];
 
