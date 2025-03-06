@@ -1,0 +1,76 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .header {
+      padding: 3rem 10%;
+    }
+  }
+
+  .nav {
+    position: absolute;
+    right: 10%;
+  }
+  
+  .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .nav a:hover,
+  .nav a:active {
+    background: linear-gradient(90deg,  #6fcdea, #319cf9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 18px rgba(51, 57, 65, 0.8);
+  }
+  
+  .active {
+    background: linear-gradient(90deg, #6fcdea, #319cf9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .logo {
+    position: absolute; /* Position the logo absolutely */
+    left: 50%; /* Move it to the horizontal center */
+    transform: translateX(-50%); /* Shift back by half its own width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+
+  .logo img {
+    width: 25rem;
+    height: 10rem;
+    object-fit: contain;
+  }
+  
