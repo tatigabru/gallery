@@ -5,9 +5,11 @@ export default function Home() {
   return (
     <>
       <header className={classes.header}>
-        <h1 className={classes.hero}> title</h1>
         <div className={classes.slideshow}>
           <ImageSlideshow />
+        </div>
+        <div className='hero'>
+          <h1>Text</h1>
         </div>
       </header>
       <main>

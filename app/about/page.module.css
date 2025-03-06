@@ -1,7 +1,5 @@
 
 .header {
-    gap: 3rem;
-    margin: 3rem auto 5rem auto;
     width: 90%;
     max-width: 75rem;
     color: #ddd6cb;
@@ -31,7 +29,7 @@
   .main h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 0rem;
     color: #ddd6cb;
   }
 
@@ -39,9 +37,7 @@
     position: absolute; /* Position absolutely */
     left: 50%; /* Move it to the horizontal center */
     transform: translateX(-50%); /* Shift back by half its own width */
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    gap: 0rem;
     color: #0a0a0a;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.15rem;
@@ -50,7 +46,7 @@
   }
 
   .about img {
-    width: 110rem;
+    width: 100rem;
     height: 50rem;
     object-fit: contain;
   }
@@ -68,17 +64,11 @@
     gap: 2rem;
   }
   
-  .perks img {
-    width: 8rem;
-    height: 8rem;
-    object-fit: contain;
-  }
-  
-  .perks p {
+  .about p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
-    color: #ddd6cb;
+    color: #000000;
   }
   

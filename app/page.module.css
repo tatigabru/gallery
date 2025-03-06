@@ -1,8 +1,8 @@
 
 .header {
     display: flex;
-    gap: 1rem;
-    margin: 1rem auto;
+    gap: 2rem;
+    margin: 4rem auto;
     width: 90%;
     max-width: 75rem;
     position: relative; /* Add this to allow absolute positioning of logo */
@@ -20,14 +20,14 @@
   
   .hero h1 {
     font-size: 2rem;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Permanent Marker', cursive;
     letter-spacing: 0.15rem;
-    text-transform: uppercase;
-    background: linear-gradient(90deg, #39c0fa, #448cff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 0.15rem;
   }
   
   .cta {
