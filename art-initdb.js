@@ -2,15 +2,16 @@ const sql = require('better-sqlite3');
 // database name
 const db = sql('art.db');
 
-const dummyArt = [
+const myArt = [
   {
     title: 'Boats',
     slug: 'boats',
     image: '/images/boats-800x800.jpg',
     description:
       'A beautiful painting of boats floating on a serene lake with mountains in the background.',
-    price: 249.99,
-    category: 'acrylic'
+    price: 250,
+    category: 'acrylic',
+    size: '16x24'
   },
   {
     title: 'Sailing',
@@ -18,8 +19,9 @@ const dummyArt = [
     image: '/images/sailing-800x800.jpg',
     description:
       'A vibrant depiction of sailboats racing across the open sea with a lighthouse.',
-    price: 199.99,
-    category: 'acrylic'
+    price: 200,
+    category: 'acrylic',
+    size: '16x24'
   },
   {
     title: 'Sakura',
@@ -27,8 +29,9 @@ const dummyArt = [
     image: '/images/sakura-800x800.jpg',
     description:
       'Delicate cherry blossoms in full bloom, capturing the essence of spring in Japan.',
-    price: 99.99,
-    category: 'acrylic'
+    price: 100,
+    category: 'acrylic',
+    size: '16x24'
   },
   {
     title: 'Shamrock',
@@ -36,8 +39,9 @@ const dummyArt = [
     image: '/images/shamrock-800x800.jpg',
     description:
       'A shamrock field with Irish landscapes.',
-    price: 149.99,
-    category: 'acrylic'
+    price: 150,
+    category: 'acrylic',
+    size: '16x24'
   },
   {
     title: 'Sunset',
@@ -45,8 +49,9 @@ const dummyArt = [
     image: '/images/sunset-800x800.jpg',
     description:
       'A breathtaking sunset over the sea horizon with vibrant pink and purple hues.',
-    price: 149.99,
-    category: 'acrylic'
+    price: 150,
+    category: 'acrylic',
+    size: '16x24'
   },
   {
     title: 'Nude',
@@ -54,8 +59,9 @@ const dummyArt = [
     image: '/images/nude-800x800.jpg',
     description:
       'An artistic nude sketch.',
-    price: 99.99,
-    category: 'acrylic'
+    price: 100,
+    category: 'acrylic',
+    size: '16x24'
   },
   {
     title: 'Herons',
@@ -63,8 +69,9 @@ const dummyArt = [
     image: '/images/sumie-herons-800x800.jpg',
     description:
       'Traditional Japanese sumi-e painting of elegant herons wading in misty waters.',
-    price: 59.99,
-    category: 'sumie'
+    price: 60,
+    category: 'sumie',
+    size: '12x16'
   },
   {
     title: 'Tiger',
@@ -72,8 +79,9 @@ const dummyArt = [
     image: '/images/sumie-tiger-800x800.jpg',
     description:
       'Traditional Japanese sumi-e painting of tiger hiding in the bamboo forest.',
-    price: 99.99,
-    category: 'sumie'
+    price: 100,
+    category: 'sumie',
+    size: '12x16'
   },
   {
     title: 'Sakura',
@@ -81,8 +89,9 @@ const dummyArt = [
     image: '/images/sumie-sakura-800x800.jpg',
     description:
       'Traditional Japanese sumi-e painting of sakura at a river, capturing spring in Japan.',
-    price: 99.99,
-    category: 'sumie'
+    price: 100,
+    category: 'sumie',
+    size: '12x16'
   },
   {
     title: 'Bamboo',
@@ -90,8 +99,9 @@ const dummyArt = [
     image: '/images/sumie-bamboo-800x800.jpg',
     description:
       'Traditional Japanese sumi-e painting of bamboo at a river.',
-    price: 49.99,
-    category: 'sumie'
+    price: 50,
+    category: 'sumie',
+    size: '12x16'
   },
   {
     title: 'Bicycle',
@@ -99,8 +109,9 @@ const dummyArt = [
     image: '/images/watercolor-bicycle-800x800.jpg',
     description:
       'Watercolor sketch of a bicycle in the autumn leaves.',
-    price: 49.99,
-    category: 'watercolor'
+    price: 50,
+    category: 'watercolor',
+    size: '12x16'
   },
   {
     title: 'Oaks',
@@ -108,8 +119,9 @@ const dummyArt = [
     image: '/images/watercolor-oaks-800x800.jpg',
     description:
       'Watercolor sketch of yellow autumn oaks.',
-    price: 49.99,
-    category: 'watercolor'
+    price: 50,
+    category: 'watercolor',
+    size: '12x16'
   },
   {
     title: 'Autumn',
@@ -117,8 +129,9 @@ const dummyArt = [
     image: '/images/watercolor-autumn-800x800.jpg',
     description:
       'Watercolor sketch of bright autumn trees under rain.',
-    price: 49.99,
-    category: 'watercolor'
+    price: 50,
+    category: 'watercolor',
+    size: '12x16'
   },
   {
     title: 'Maples',
@@ -126,11 +139,16 @@ const dummyArt = [
     image: '/images/watercolor-autumn2-800x800.jpg',
     description:
       'Watercolor sketch of bright maple trees under a slight autumn rain.',
-    price: 49.99,
-    category: 'watercolor'
+    price: 50,
+    category: 'watercolor',
+    size: '12x16'
   },
 ];
 
+// Drop the existing table if it exists to recreate with the new schema
+db.prepare(`DROP TABLE IF EXISTS art`).run();
+
+// Create table with size field
 db.prepare(`
    CREATE TABLE IF NOT EXISTS art (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -139,7 +157,8 @@ db.prepare(`
        image TEXT NOT NULL,
        description TEXT NOT NULL,
        price REAL NOT NULL,
-       category TEXT NOT NULL
+       category TEXT NOT NULL,
+       size TEXT NOT NULL
     )
 `).run();
 
@@ -152,11 +171,12 @@ async function initData() {
          @image,
          @description,
          @price,
-         @category
+         @category,
+         @size
       )
    `);
 
-  for (const art of dummyArt) {
+  for (const art of myArt) {
     stmt.run(art);
   }
 }
