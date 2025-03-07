@@ -1,22 +1,26 @@
 
 .header {
     width: 90%;
-    max-width: 75rem;
+    max-width: 80rem;  /* Changed to match desired image width */
     color: #ddd6cb;
     font-size: 1.5rem;
     text-align: center;
+    margin: 0 auto;  /* Center the header container */
     position: relative; /* Add this to allow absolute positioning of logo */
   }
   
+  .header img {
+    width: 80rem;
+    height: auto;  /* Changed to auto to maintain proportions */
+    object-fit: contain;  /* Changed to contain to maintain proportions */
+    border-radius: 8px;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    animation: fade-slide-in-from-left 1s ease-out forwards;
+    display: block;  /* Block display helps with centering */
+  }
+
   .header h1 {
     font-family: 'Montserrat', sans-serif;
-  }
-  
-  .highlight {
-    background: linear-gradient(90deg, #f9572a, #ff8a05);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
   
   .main {
@@ -34,9 +38,6 @@
   }
 
   .about {
-    position: absolute; /* Position absolutely */
-    left: 50%; /* Move it to the horizontal center */
-    transform: translateX(-50%); /* Shift back by half its own width */
     gap: 0rem;
     color: #0a0a0a;
     font-family: 'Montserrat', sans-serif;
@@ -46,22 +47,8 @@
   }
 
   .about img {
-    width: 100rem;
+    width: 80rem;
     height: 50rem;
-    object-fit: contain;
-  }
-  
-  .perks {
-    list-style: none;
-    margin: 3rem 0;
-    padding: 0;
-  }
-  
-  .perks li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
   }
   
   .about p {
