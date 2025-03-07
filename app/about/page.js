@@ -7,6 +7,7 @@ export default function AboutPage() {
   return (
     <>
       <header className={classes.header}>
+      <Image src={meImg} alt="Me eyes" className="object-cover" />
       </header>
       <main className={classes.about}>
       <Image src={meImg} alt="Me eyes" className="object-cover" />

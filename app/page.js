@@ -9,13 +9,12 @@ export default function Home() {
           <ImageSlideshow />
         </div>
         <div className='hero'>
-          <h1>Text</h1>
-        </div>
+          <h1>Welcome to my gallery</h1>
+          <p>Here you will find a range of artworks, </p>
+          <p>including acrylics on canvas, watercolor sketches, </p>
+          <p>nude sketches, and traditional sumi-e paintings.</p>
+        </div>.
       </header>
-      <main>
-        <section className={classes.section}>
-        </section>
-      </main>
     </>
   );
 }
