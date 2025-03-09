@@ -35,7 +35,7 @@ export default function MealDetailsPage({ params }) {
         <h1>{art.title}</h1>
         <h2>{art.category}, $ {art.price}</h2>
         <p>{art.description} </p>
-        <p>Size: 14 x 19 inch</p>
+        <p>Size: {art.size} inch</p>
         <p>Exclusive: original artwork. Only one painting like this will ever exist</p>
       </div>
     </header>
