@@ -1,11 +1,35 @@
+'use client';
+import { saveComment } from '@/lib/comments';
+
 export default function ContactForm() {
+    const handleSubmit = async (event) => {
+        // Prevent the default form submission behavior that would refresh the page
+        event.preventDefault();
+        
+        const formData = {
+            name: event.target.name.value,
+            email: event.target.email.value,
+            comment: event.target.comment.value,
+        };
+
+        const result = await saveComment(formData);
+        
+        if (result.success) {
+            // Clear the form
+            event.target.reset();
+            alert('Thank you for your comment!');
+        } else {
+            alert('Failed to submit comment. Please try again.');
+        }
+    };
+
     return (
         <>
             <header>
             </header>
             <main className="p-6 flex flex-col items-center">
                 <h2 className="text-3xl font-montserrat font-bold mb-6">Contact us</h2>
-                <form className="w-1/2 min-w-[300px]">
+                <form className="w-1/2 min-w-[300px]" onSubmit={handleSubmit}>
                     <div className="mb-12">
                         <label htmlFor="name" className="block mb-2 text-lg font-montserrat">
                             Your Name or Alias
