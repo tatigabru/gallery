@@ -12,13 +12,25 @@ export default function ContactForm() {
             comment: event.target.comment.value,
         };
 
-        const result = await saveComment(formData);
-        
-        if (result.success) {
-            // Clear the form
-            event.target.reset();
-            alert('Thank you for your comment!');
-        } else {
+        try {
+            const response = await fetch('/api/comments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                // Clear the form
+                event.target.reset();
+                alert('Thank you for your comment!');
+            } else {
+                alert('Failed to submit comment. Please try again.');
+            }
+        } catch (error) {
             alert('Failed to submit comment. Please try again.');
         }
     };
