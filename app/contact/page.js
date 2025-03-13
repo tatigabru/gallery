@@ -30,7 +30,7 @@ export default function ContactForm() {
             <main className="p-6 flex flex-col items-center">
                 <h2 className="text-3xl font-montserrat font-bold mb-6">Contact us</h2>
                 <form className="w-1/2 min-w-[300px]" onSubmit={handleSubmit}>
-                    <div className="mb-12">
+                    <div className="mb-12 mt-12">
                         <label htmlFor="name" className="block mb-2 text-lg font-montserrat">
                             Your Name or Alias
                         </label>
